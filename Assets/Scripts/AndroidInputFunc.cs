@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
-public class InputFunc : MonoBehaviour
+public class AndroidInputFunc : MonoBehaviour
 {
     public InputField inputField;
 
@@ -22,9 +22,10 @@ public class InputFunc : MonoBehaviour
 
     public void OnClickSaveButton()
     {
+        Debug.Log("Clicked Save Button");
         StreamWriter sw;
         FileInfo fi;
-        string path = Application.dataPath + @"/MemoData/testmemo.txt";
+        string path = Application.persistentDataPath + @"/Androidtestmemo.txt";
         fi = new FileInfo(path);
         sw = fi.AppendText();
 
@@ -34,6 +35,5 @@ public class InputFunc : MonoBehaviour
         sw.Flush();
         sw.Close();
         Debug.Log("Save Completed");
-        //Debug.Log(Application.persistentDataPath + @"/Androidtestmemo.txt");
     }
 }
