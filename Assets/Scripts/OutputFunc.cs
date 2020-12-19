@@ -7,6 +7,7 @@ using System.IO;
 public class OutputFunc : MonoBehaviour
 {
     public Text memo;
+    public InputField editMemo;
 
     // Start is called before the first frame update
     void Start()
@@ -38,5 +39,11 @@ public class OutputFunc : MonoBehaviour
     public void OnClickSaveButton()
     {
         showmemo();
+    }
+
+    public void OnClickEditButton()
+    {
+        showmemo();
+        editMemo.text = memo.text;
     }
 }
